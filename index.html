@@ -5,71 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog TechParts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
 </head>
 
-<body style="margin: 0">
-    <nav style="background-color: #0074D9; padding: 16px;">
-        <div
-            style="text-align: center; font-style: italic; color: white; font-size: 1.5em; font-weight: bold; margin-bottom: 8px;">
+<body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #f5f5f5;">
+    <nav style="background: linear-gradient(135deg, #0074D9 0%, #0056b3 100%); padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <div style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-style: italic; color: white; font-size: 1.8em; margin-bottom: 12px;">
             Komputer<span style="font-weight: bold; color: #ffd700;">Kita</span>
         </div>
-        <ul style="list-style: none; display: flex; justify-content: center; margin: 0; padding: 0;">
-            <li style="margin-right: 24px;">
-                <a href="#" style="color: white; text-decoration: none; font-weight: bold;">Beranda</a>
+        <ul style="font-family: 'Poppins', sans-serif; list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; gap: 30px;">
+            <li style="font-weight: 400;">
+                <a href="#beranda" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; transition: background-color 0.3s;">Beranda</a>
             </li>
-            <li style="margin-right: 24px;">
-                <a href="#" style="color: white; text-decoration: none; font-weight: bold;">Artikel</a>
+            <li style="font-weight: 400;">
+                <a href="#artikel" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; transition: background-color 0.3s;">Artikel</a>
             </li>
-            <li style="margin-right: 24px;">
-                <a href="#" style="color: white; text-decoration: none; font-weight: bold;">Tentang</a>
+            <li style="font-weight: 400;">
+                <a href="#komponen" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; transition: background-color 0.3s;">Komponen</a>
             </li>
-            <li>
-                <a href="#" style="color: white; text-decoration: none; font-weight: bold;">Kontak</a>
+            <li style="font-weight: 400;">
+                <a href="#produk" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; transition: background-color 0.3s;">Produk</a>
             </li>
         </ul>
     </nav>
 
-
-    <div style="position: relative; width: 100%; height: 600px; overflow: hidden;">
+    <div id="beranda" style="position: relative; width: 100%; height: 500px; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);"></div>
         <img src="images/computer-gaming.jpg" alt="Computer Gaming"
             style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(0, 0, 0, 0.35);">
-            <h1
-                style="color: #FFD700; font-size: 2.7em; font-weight: bold; text-shadow: 2px 2px 12px #222; text-align: center; margin: 0;">
-                Ayo Rakit PC Impianmu!<br>
-                Bangun komputer sendiri, sesuai keinginan & kebutuhanmu. Mulai sekarang!
+        <div style="position: absolute; top: 50%; left: 50px; transform: translateY(-50%); max-width: 600px;">
+            <h1 style="font-family: 'Comic Neue', cursive; font-weight: 700; font-size: 48px; margin: 0; color: white; line-height: 1.3; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">
+                Ayo Rakit <span style="color: #ffd700;">PC Impianmu!</span>
             </h1>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 20px; color: white; margin-top: 15px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5);">
+                Bangun komputer sendiri, sesuai keinginan & kebutuhanmu. Mulai sekarang!
+            </p>
         </div>
     </div>
 
-    <main class="container">
-        <section style="display: flex; align-items: flex-start;">
-            <img src="images/motherboard.png" alt="Motherboard" style="width: 300px;">
-            <div style="margin-left: 20px;">
-                <h2>Motherboard</h2>
-                <p>Motherboard atau panggung komputer adalah komponen utama dalam komputer yang digunakan untuk
-                    menghubungkan segala perangkat lainnya, termasuk CPU, memory, dan perangkat lainnya, serta digunakan
-                    untuk mengatur proses booting dan bagaimana komputer bekerja.</p>
-                <ul>
+    <section id="artikel" style="max-width: 1200px; margin: 60px auto; padding: 0 30px;">
+        <div style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; gap: 40px;">
+            <div>
+                <img src="images/komputerpertama.jpeg" alt="History" style="width: 350px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 32px; margin-top: 0; margin-bottom: 20px;">Sejarah Komputer</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify;">
+    Komputer pertama kali dibangun oleh Alan Turing pada tahun 1948. Pada tahun 1951, komputer pertama kali dijual untuk digunakan dalam rekam data. Pada tahun 1957, komputer pertama kali digunakan untuk menghitung rakit. Pada tahun 1960, komputer pertama kali digunakan untuk perhitungan bilangan bulat. Pada tahun 1970, komputer pertama kali digunakan untuk perhitungan desimal. Pada tahun 1977, komputer pertama kali digunakan untuk perhitungan grafika. Pada tahun 1980, komputer pertama kali digunakan untuk perhitungan kompleks.
+    <br><br>
+    Memasuki awal dekade 1990-an, komputer mulai mengalami perkembangan pesat dengan hadirnya sistem operasi berbasis GUI (Graphical User Interface) seperti Windows 95 yang mempermudah pengguna awam. Tahun 1995 juga menjadi momentum penting dengan mulai meluasnya penggunaan internet publik yang kemudian melahirkan era informasi digital. Pada awal 2000-an, komputer menjadi semakin terjangkau dan mulai digunakan secara massal di sekolah, perkantoran, hingga rumah tangga.
+    <br><br>
+    Memasuki tahun 2010 ke atas, perkembangan komputer semakin terintegrasi dengan teknologi seluler dan cloud computing. Laptop menjadi semakin tipis dan ringan, sementara komputasi awan memungkinkan data dan aplikasi dijalankan tanpa ketergantungan pada perangkat fisik tertentu. Di era modern ini, teknologi komputer juga melahirkan kecerdasan buatan (AI), Internet of Things (IoT), big data, hingga komputasi kuantum yang sedang dikembangkan untuk menyelesaikan perhitungan matematis yang jauh lebih kompleks daripada komputer klasik.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <main id="komponen" style="max-width: 1200px; margin: 0 auto; padding: 0 30px 60px;">
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; display: flex; align-items: flex-start; gap: 40px;">
+            <div>
+                <img src="images/motherboard.png" alt="Motherboard" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">Motherboard</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    Motherboard atau panggung komputer adalah komponen utama dalam komputer yang digunakan untuk menghubungkan segala perangkat lainnya, termasuk CPU, memory, dan perangkat lainnya, serta digunakan untuk mengatur proses booting dan bagaimana komputer bekerja.
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
                     <li>Mencegah komponen-komponen lainnya ketika komputer dimatikan.</li>
                     <li>Menghubungkan CPU dan memory dengan perangkat lainnya.</li>
                     <li>Mengatur proses booting dan bagaimana komputer bekerja.</li>
                     <li>Memiliki bus-bus yang digunakan untuk menghubungkan perangkat-perangkat lainnya.</li>
                 </ul>
             </div>
-
         </section>
 
-        <section style="display: flex; align-items: flex-start;">
-            <img src="images/processor.jpg" alt="Processor" style="width: 300px;">
-            <div style="margin-left: 20px;">
-                <h2>Processor</h2>
-                <p>Processor atau CPU (Central Processing Unit) adalah komponen utama dalam komputer yang digunakan
-                    untuk menjalankan program dan melakukan perhitungan. CPU memiliki kemampuan untuk mengambil
-                    instruksi dari memory dan menjalankannya.</p>
-                <ul>
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; display: flex; align-items: flex-start; gap: 40px;">
+            <div>
+                <img src="images/processor.jpg" alt="Processor" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">Processor</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    Processor atau CPU (Central Processing Unit) adalah komponen utama dalam komputer yang digunakan untuk menjalankan program dan melakukan perhitungan. CPU memiliki kemampuan untuk mengambil instruksi dari memory dan menjalankannya.
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
                     <li>Menyimpan instruksi dari memory dan menjalankannya.</li>
                     <li>Melakukan perhitungan dan memproses data.</li>
                     <li>Menghubungkan perangkat-perangkat lainnya dengan memory.</li>
@@ -78,34 +102,166 @@
             </div>
         </section>
 
-
-        <section style="display: flex; align-items: flex-start; margin-top: 20px;">
-            <img src="images/ram.png" alt="RAM" style="width: 300px;">
-            <div style="margin-left: 20px;">
-                <h2>RAM</h2>
-                <p>RAM (Random Access Memory) adalah komponen dalam komputer yang digunakan untuk menyimpan data yang
-                    sedang aktif dalam proses komputasi. Data yang disimpan dalam RAM bisa diakses dengan cepat dan
-                    mudah.</p>
-                <ul>
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 40px; margin-bottom: 30px;">
+            <div>
+                <img src="images/ram.png" alt="RAM" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">RAM</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    RAM (Random Access Memory) adalah komponen dalam komputer yang digunakan untuk menyimpan data yang sedang aktif dalam proses komputasi. Data yang disimpan dalam RAM bisa diakses dengan cepat dan mudah.
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
                     <li>Menampung data yang sedang aktif dalam proses komputasi.</li>
-                    <li>Memiliki kapasitas yang lebih kecil daripada hard disk, tetapi lebih cepat dalam akses data.
-                    </li>
+                    <li>Memiliki kapasitas yang lebih kecil daripada hard disk, tetapi lebih cepat dalam akses data.</li>
                     <li>Dapat diganti secara bertahap dengan hard disk.</li>
                     <li>Data yang disimpan dalam RAM hilang ketika komputer dimatikan.</li>
                 </ul>
             </div>
         </section>
 
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 40px; margin-bottom: 30px;">
+            <div>
+                <img src="images/psu.png" alt="Power Supply" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">Power Supply</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    Power Supply (PSU) adalah komponen dalam komputer yang digunakan untuk menyediakan listrik yang diperlukan untuk menjalankan komputer. PSU memiliki kapasitas yang lebih kecil daripada hard disk, tetapi lebih cepat dalam akses data.
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
+                    <li>Menyediakan listrik yang diperlukan untuk menjalankan komputer.</li>
+                    <li>Mengubah Arus (AC ke DC): Mengonversi arus listrik AC yang biasa digunakan di rumah ke arus DC yang dibutuhkan sebagian besar perangkat elektronik.</li>
+                    
+                </ul>
+            </div>
+        </section>
 
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 40px; margin-bottom: 30px;">
+            <div>
+                <img src="images/storage.jpeg" alt="Storage" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">Storage</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    Storage adalah komponen dalam komputer yang digunakan untuk menyimpan data yang diperlukan untuk menjalankan komputer. Storage memiliki kapasitas yang lebih kecil daripada hard disk, tetapi lebih cepat dalam akses data.
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
+                    <li>Menyimpan data yang diperlukan untuk menjalankan komputer.</li>
+                    <li>Memiliki kapasitas yang lebih besar daripada RAM.</li>
+                    <li>Ssd biasanya digunakan untuk menginstal OS agar load nya lebih cepat</li>
+                </ul>
+            </div>
+        </section>
 
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 40px; margin-bottom: 30px;">
+            <div>
+                <img src="images/vga.jpg" alt="Kartu Grafis" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">Kartu Grafis</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    Kartu Grafis adalah komponen dalam komputer yang digunakan untuk menghasilkan gambar yang akan ditampilkan di layar. Kartu Grafis memiliki kapasitas yang lebih kecil daripada hard disk, tetapi lebih cepat dalam akses data.
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
+                    <li>Menghasilkan gambar yang akan ditampilkan di layar.</li>
+                    <li>Berfungsi lain sebagai rendering</li>
+                </ul>
+            </div>
+        </section>
 
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 40px; margin-bottom: 30px;">
+            <div>
+                <img src="images/input.jpg" alt="Input" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">Input</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    Input adalah komponen dalam komputer yang digunakan untuk memasukkan data ke dalam komputer. Input memiliki kapasitas yang lebih kecil daripada hard disk, tetapi lebih cepat dalam akses data.
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
+                    <li>Menghasilkan data yang akan ditampilkan di layar.</li>
+                </ul>
+            </div>
+        </section>
 
+        <section style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 40px;">
+            <div>
+                <img src="images/output.jpg" alt="Output" style="width: 300px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="color: #0074D9; font-size: 28px; margin-top: 0; margin-bottom: 15px;">Output</h2>
+                <p style="color: #555; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+                    Output adalah komponen dalam komputer yang digunakan untuk mengubah data hasil pemrosesan komputer menjadi bentuk yang dapat dipahami pengguna
+                </p>
+                <ul style="color: #555; line-height: 2; padding-left: 20px;">
+                    <li>Mengubah data hasil pemrosesan komputer menjadi bentuk yang dapat dipahami pengguna.</li>
+                </ul>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Blog TechParts. Hak cipta dilindungi.</p>
+    <section id="produk" style="margin: 60px auto; padding: 0 30px;">
+        <h2 style="text-align: center; color: #0074D9; font-size: 36px; margin-bottom: 40px;">Paket Rakitan PC</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            
+           
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div style="background: #0074D9; border-radius: 15px; padding: 20px; width: 300px; color: white; margin-bottom: 20px;">
+                    <h3 style="margin: 0;">Entry Level</h3>
+                    <div style="margin-top: 10px; font-size: 20px; font-weight: bold;">Rp 2.000.000</div>
+                </div>
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                    <li style="margin: 10px 0;">Intel Celeron / AMD Athlon</li>
+                    <li style="margin: 10px 0;">RAM 4GB DDR4</li>
+                    <li style="margin: 10px 0;">SSD 128GB</li>
+                    <li style="margin: 10px 0;">Motherboard H410</li>
+                    <li style="margin: 10px 0;">PSU 400W</li>
+                    <li style="margin: 10px 0;">Case Standard</li>
+                </ul>
+                <div style="margin-top: 10px;">Cocok untuk: Office, Browsing, Multimedia</div>
+            </div>
+
+            
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div style="background: #0056b3; border-radius: 15px; padding: 20px; width: 300px; color: white; margin-bottom: 20px;">
+                    <h3 style="margin: 0;">Mid Range</h3>
+                    <div style="margin-top: 10px; font-size: 20px; font-weight: bold;">Rp 7.000.000</div>
+                </div>
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                    <li style="margin: 10px 0;">Intel Core i5 / AMD Ryzen 5</li>
+                    <li style="margin: 10px 0;">RAM 16GB DDR4</li>
+                    <li style="margin: 10px 0;">SSD 512GB NVMe</li>
+                    <li style="margin: 10px 0;">GTX 1650 / RX 6500 XT</li>
+                    <li style="margin: 10px 0;">PSU 550W 80+ Bronze</li>
+                    <li style="margin: 10px 0;">Case RGB</li>
+                </ul>
+                <div style="margin-top: 10px;">Cocok untuk: Gaming 1080p, Design, Video Editing</div>
+            </div>
+
+            
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div style="background: #004080; border-radius: 15px; padding: 20px; width: 300px; color: white; margin-bottom: 20px;">
+                    <h3 style="margin: 0;">High End</h3>
+                    <div style="margin-top: 10px; font-size: 20px; font-weight: bold;">Rp 12.000.000</div>
+                </div>
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                    <li style="margin: 10px 0;">Intel Core i7 / AMD Ryzen 7</li>
+                    <li style="margin: 10px 0;">RAM 32GB DDR4</li>
+                    <li style="margin: 10px 0;">SSD 1TB NVMe</li>
+                    <li style="margin: 10px 0;">RTX 3060 Ti / RX 6700 XT</li>
+                    <li style="margin: 10px 0;">PSU 650W 80+ Gold</li>
+                    <li style="margin: 10px 0;">Case Premium RGB</li>
+                </ul>
+                <div style="margin-top: 10px;">Cocok untuk: Gaming 1440p, 3D Rendering, Streaming</div>
+            </div>
+
         </div>
+    </section>
+
+    <footer style="background: linear-gradient(135deg, #0074D9 0%, #0056b3 100%); padding: 30px; text-align: center; color: white;">
+        <p style="margin: 0; font-size: 16px;">&copy; 2025 Blog TechParts. Hak cipta dilindungi.</p>
     </footer>
 </body>
 
