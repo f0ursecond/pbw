@@ -338,7 +338,7 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: #333;
+    background: #0074D9;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -347,6 +347,19 @@ body {
 
 .back-button:hover {
     background: #555;
+}
+
+.no-results {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.no-results h2 {
+    color: #e74c3c;
+    margin-bottom: 15px;
 }
 </style>
 
@@ -373,10 +386,10 @@ body {
 
     <?php if (empty($hasil)) : ?>
         <div class="no-results">
-            <h2>Tidak Ada Build yang Cocok</h2>
-            <p>Maaf, tidak ada kombinasi PC yang sesuai dengan kriteria Anda.</p>
+            <h2>Tidak Ada Hasil</h2>
+            <p>Maaf, tidak ada komputer yang sesuai dengan kriteria pencarian Anda.</p>
             <p>Coba sesuaikan filter atau perluas rentang budget Anda.</p>
-            <a href="javascript:history.back()" class="back-button">← Kembali ke Form</a>
+            <a href="javascript:history.back()" class="back-button">Kembali ke Form</a>
         </div>
     <?php else : ?>
         <div class="result-count">
@@ -453,7 +466,7 @@ body {
         <?php endforeach; ?>
 
         <div style="text-align: center; margin-top: 30px;">
-            <a href="javascript:history.back()" class="back-button">← Cari Build Lain</a>
+            <a href="javascript:history.back()" class="back-button">Cari Build Lain</a>
         </div>
     <?php endif; ?>
 </div>
