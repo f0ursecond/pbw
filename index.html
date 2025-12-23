@@ -68,6 +68,41 @@
             display: block;
         }
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('processor').addEventListener('change', validateCompatibility);
+            document.getElementById('mobo').addEventListener('change', validateCompatibility);
+        });
+
+        function validateCompatibility() {
+            const processor = document.getElementById('processor').value;
+            const mobo = document.getElementById('mobo').value;
+
+            if (!processor || !mobo) return;
+
+            const cpuBrand = processor.split('|')[0];
+            const moboChipset = mobo.split('|')[0];
+
+            const cpuIsIntel = cpuBrand.includes('Intel');
+            const cpuIsAMD = cpuBrand.includes('Ryzen');
+
+            const moboIsIntel = ['H510', 'B660'].includes(moboChipset);
+            const moboIsAMD = ['B450', 'B550'].includes(moboChipset);
+
+            if (
+                (cpuIsIntel && moboIsAMD) ||
+                (cpuIsAMD && moboIsIntel)
+            ) {
+                alert(
+                    '❌ Tidak kompatibel!\n' +
+                    cpuBrand + ' tidak cocok dengan motherboard ' + moboChipset
+                );
+                document.getElementById('mobo').value = '';
+            }
+        }
+    </script>
+
 </head>
 
 <body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #f5f5f5;">
@@ -456,48 +491,108 @@
 
     <div id="simulasi"
         style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 60px; padding-bottom: 20px;">
+
         <section style="background: white; padding: 40px; border-radius: 15px; max-width: 600px; width:100%;">
-            <h2 style="color:#0074D9; text-align:center;">Inputkan Komputer Impian Anda</h2>
+            <h2 style="color:#0074D9; text-align:center;">Inputkan Part Komputer Impian Anda</h2>
 
             <form action="rekomendasi.php" method="post">
+
                 <label>Nama:</label><br>
                 <input type="text" name="nama" required
                     style="width:100%; padding:10px; box-sizing:border-box;"><br><br>
 
-                <label>Kebutuhan:</label><br>
-                <select name="kebutuhan"
+
+                <label>Motherboard</label><br>
+                <select id="mobo" name="mobo" required
                     style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
-                    <option value="">Semua Kebutuhan</option>
-                    <option value="office">Office & Productivity</option>
-                    <option value="gaming">Gaming</option>
-                    <option value="editing">Video/Photo Editing</option>
-                    <option value="workstation">Workstation Pro</option>
+                    <option value="">-- Pilih Motherboard --</option>
+                    <option value="B450|1200000">B450 (AMD)</option>
+                    <option value="B550|1600000">B550 (AMD)</option>
+
+                    <option value="H510|1300000">H510 (Intel)</option>
+                    <option value="B660|1800000">B660 (Intel)</option>
                 </select><br><br>
 
-                <label>Budget Minimum (Rp):</label><br>
-                <input type="number" name="budget_min" placeholder="Contoh: 4000000"
-                    style="width:100%; padding:10px; box-sizing:border-box;"><br><br>
 
-                <label>Budget Maximum (Rp):</label><br>
-                <input type="number" name="budget_max" required placeholder="Contoh: 15000000"
-                    style="width:100%; padding:10px; box-sizing:border-box;"><br><br>
-
-                <label>Prioritas GPU:</label><br>
-                <select name="gpu_priority"
+                <label>Processor</label><br>
+                <select id="processor" name="processor" required
                     style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
-                    <option value="">Tidak Ada Preferensi</option>
-                    <option value="integrated">Integrated Graphics (Hemat)</option>
-                    <option value="dedicated">Dedicated Graphics (Performa)</option>
+                    <option value="">-- Pilih Processor --</option>
+
+
+                    <option value="Intel Core i3|1800000">Intel Core i3</option>
+                    <option value="Intel Core i5|2800000">Intel Core i5</option>
+                    <option value="Intel Core i7|4200000">Intel Core i7</option>
+
+
+                    <option value="Ryzen 3|1700000">Ryzen 3</option>
+                    <option value="Ryzen 5|3200000">Ryzen 5</option>
+                    <option value="Ryzen 7|4500000">Ryzen 7</option>
+                </select><br><br>
+
+
+                <label>RAM</label><br>
+                <select name="ram" required
+                    style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
+                    <option value="">-- Pilih RAM --</option>
+                    <option value="8 GB DDR4|600000">8 GB DDR4</option>
+                    <option value="16 GB DDR4|1100000">16 GB DDR4</option>
+                </select><br><br>
+
+
+                <label>Storage</label><br>
+                <select name="storage" required
+                    style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
+                    <option value="">-- Pilih Storage --</option>
+                    <option value="SSD 256 GB|500000">SSD 256 GB</option>
+                    <option value="SSD 512 GB|900000">SSD 512 GB</option>
+                    <option value="SSD 1 TB|1400000">SSD 1 TB</option>
+                </select><br><br>
+
+
+                <label>Power Supply</label><br>
+                <select name="psu" required
+                    style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
+                    <option value="">-- Pilih PSU --</option>
+                    <option value="500 Watt|500000">500 Watt</option>
+                    <option value="650 Watt|750000">650 Watt</option>
+                </select><br><br>
+
+
+                <label>Keyboard</label><br>
+                <select name="keyboard" required
+                    style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
+                    <option value="">-- Pilih Keyboard --</option>
+                    <option value="Keyboard Standard|150000">Keyboard Standard</option>
+                    <option value="Mechanical Keyboard|450000">Mechanical Keyboard</option>
+                </select><br><br>
+
+
+                <label>Mouse</label><br>
+                <select name="mouse" required
+                    style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
+                    <option value="">-- Pilih Mouse --</option>
+                    <option value="Mouse Office|100000">Mouse Office</option>
+                    <option value="Gaming Mouse|350000">Gaming Mouse</option>
+                </select><br><br>
+
+
+                <label>Monitor</label><br>
+                <select name="monitor" required
+                    style="width:100%; padding:10px; box-sizing:border-box; appearance:none; -webkit-appearance:none; -moz-appearance:none; background:white;">
+                    <option value="">-- Pilih Monitor --</option>
+                    <option value="Monitor 22 Inch|1500000">22 Inch</option>
+                    <option value="Monitor 24 Inch|2500000">24 Inch</option>
                 </select><br><br>
 
                 <button type="submit"
                     style="padding:12px 20px; background:#0074D9; color:white; border:none; border-radius:8px; cursor:pointer;">
-                    🔍 Lihat Rekomendasi
+                    Cek Harga
                 </button>
+
             </form>
         </section>
-
-        <section style="background: white; padding: 40px; border-radius: 15px; max-width: 600px; width:100%;">
+        <!-- <section style="background: white; padding: 40px; border-radius: 15px; max-width: 600px; width:100%;">
             <h2 style="color:#0074D9; text-align:center;">Inputkan Laptop Impian Anda</h2>
 
             <form action="rekomendasi_laptop.php" method="post">
@@ -533,55 +628,12 @@
 
                 <button type="submit"
                     style="padding:12px 20px; background:#0074D9; color:white; border:none; border-radius:8px; cursor:pointer;">
-                    🔍 Lihat Rekomendasi
+                    Lihat Rekomendasi
                 </button>
             </form>
-        </section>
-
-
+        </section> -->
     </div>
-
-
-
-
-
-    <!-- <section style="background: white; padding: 40px; border-radius: 15px; max-width: 600px; margin: 60px auto;">
-        <h2 style="color:#0074D9; text-align:center;">Inputkan Komputer Impian Anda</h2>
-
-        <form action="rekomendasi.php" method="post">
-            <label>Nama:</label><br>
-            <input type="text" name="nama" required style="width:100%; padding:10px;"><br><br>
-
-            <label>Kebutuhan:</label><br>
-            <select name="kebutuhan" style="width:100%; padding:10px;">
-                <option value="">Semua Kebutuhan</option>
-                <option value="office">Office & Productivity</option>
-                <option value="gaming">Gaming</option>
-                <option value="editing">Video/Photo Editing</option>
-                <option value="workstation">Workstation Pro</option>
-            </select><br><br>
-
-            <label>Budget Minimum (Rp):</label><br>
-            <input type="number" name="budget_min" placeholder="Contoh: 4000000"
-                style="width:100%; padding:10px;"><br><br>
-
-            <label>Budget Maximum (Rp):</label><br>
-            <input type="number" name="budget_max" required placeholder="Contoh: 15000000"
-                style="width:100%; padding:10px;"><br><br>
-
-            <label>Prioritas GPU:</label><br>
-            <select name="gpu_priority" style="width:100%; padding:10px;">
-                <option value="">Tidak Ada Preferensi</option>
-                <option value="integrated">Integrated Graphics (Hemat)</option>
-                <option value="dedicated">Dedicated Graphics (Performa)</option>
-            </select><br><br>
-
-            <button type="submit"
-                style="padding:12px 20px; background:#0074D9; color:white; border:none; border-radius:8px; cursor:pointer;">
-                🔍 Lihat Rekomendasi
-            </button>
-        </form>
-    </section> -->
+    </section>
 
 
     <footer
@@ -591,23 +643,3 @@
 </body>
 
 </html>
-
-<script>
-    const sections = document.querySelectorAll('section');
-    const searchInput = document.getElementById('search');
-
-
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            const q = searchInput.value.toLowerCase();
-
-            for (let sec of sections) {
-                if (sec.textContent.toLowerCase().includes(q)) {
-                    sec.scrollIntoView({ behavior: 'smooth' });
-                    break;
-                }
-            }
-        }
-    });
-
-</script>
